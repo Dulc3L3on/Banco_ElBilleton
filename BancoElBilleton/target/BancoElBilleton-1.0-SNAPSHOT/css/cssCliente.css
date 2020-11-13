@@ -1,0 +1,85 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12/11/2020, 20:11:36
+    Author     : phily
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Actor&family=Anton&family=Arima+Madurai&display=swap');
+
+body{
+    font-family: Helvetica;
+    font-size: 20px;
+}
+
+table{
+    text-align: left;    
+}
+
+h1{
+    font-family: Anton;    
+    font-weight: bold;
+}
+
+h3{
+    font-family: Actor;    
+}
+
+h4{
+    font-family: 'Arima Madurai';
+    font-weight: bold;
+}
+
+.button:hover{
+    box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 15px 35px 0 rgba(0,0,0,0.19);    
+}
+
+#opciones{        
+    height: 50px;
+    padding-left: 50px;
+    padding-right: 50px;     
+    font-size: 20px;    
+    font-family: Georgia;
+}
+
+#menu{
+   background: #606c88;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    height: 75px;
+}
+
+#general{
+    width: 900px;
+    
+}
+
+#frameCliente{
+   height: 800px;
+    width: 1900px;
+    border: none;        
+}
+
+#frameAsociacion{
+   height: 500px;
+   width: 1400px; 
+}
+
+#subtitulo{
+    position: relative;
+    float:left;
+}
+
+#cintaOpciones{
+    width: 500px;
+    height:700px;    
+}
+
+#submit{
+    width: 175px;
+    height: 45px;        
+}

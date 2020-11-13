@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/11/2020, 21:39:23
+    Author     : phily
+*/
+
+#frameIzquierdo{
+    position: relative;
+    width: 1400px;   
+    height: 900px;
+    background-image: url(../img/blueYellow.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#logo2{
+    position: relative;
+    top: 600px;    
+    left: auto;
+}
+
+#frameDerecho{
+    position: relative;
+    left: 1400px;
+    top:-900px;
+    width: 500px;
+    height: 900px;
+}
+
+label, #cajero, #gerente{
+     position: relative;
+     padding-left: 50px;
+     padding-right: 50px;    
+}
+
+#tableUserData{
+    position: relative;
+    top: 385px    
+}
+
+#userData{
+    width: 300px;
+    height: 40px;     
+}
+
+#infoLog{    
+    width: 150px;
+    height: 40px;      
+}

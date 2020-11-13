@@ -1,0 +1,44 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 11/11/2020, 21:39:07
+    Author     : phily
+*/
+
+.cuerpo{    
+    font-family: 'Scope One', Georgia;
+    background-image: url(../img/backgroundwide.jpg);/*si será el diluido xD, el otro no concuerda con el estilo de lo demás xD*/
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#divLogin{    
+    width: 450px;
+    top: 400px;     
+    background-color: gainsboro;   
+    border-radius: 20px;
+    border-style: solid;
+}
+
+label, #cajero, #cliente, #gerente{
+    padding-left: 15px;
+    padding-right: 15px;    
+}
+
+#userData{
+    width: 200px;
+    height: 35px;      
+}
+
+#infoLog{    
+    width: 100px;
+    height: 35px;      
+}
+
+#submit{
+    width: 175px;
+    height: 45px;     
+}

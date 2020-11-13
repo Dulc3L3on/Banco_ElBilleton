@@ -1,0 +1,84 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 13/11/2020, 10:20:23
+    Author     : phily
+*/
+
+
+@import url('https://fonts.googleapis.com/css2?family=Actor&family=Anton&family=Arima+Madurai&display=swap');
+
+body{
+    font-family: Helvetica;
+    font-size: 20px;
+}
+
+table{
+    text-align: left;    
+}
+
+h1{
+    font-family: Anton;    
+    font-weight: bold;
+}
+
+h3{
+    font-family: Actor;    
+}
+
+h4{
+    font-family: 'Arima Madurai';
+    font-weight: bold;
+}
+
+
+/*#reportesJR{
+    position: relative;    
+    width: 1400px;    
+}*/
+
+.button:hover{
+    box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 15px 35px 0 rgba(0,0,0,0.19);    
+}
+
+#cintaOpciones{
+    margin-left: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: #616161; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #616161, #9bc5c3); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #616161, #9bc5c3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   /* background: #efefbb; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #efefbb, #d4d3dd); /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #efefbb, #d4d3dd); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+   /* background: #525252; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #525252, #3d72b4); /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #525252, #3d72b4); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    border: solid;
+    border-radius: 15px;
+    width: 200px;
+    height: 700px;
+}
+
+#frameReportes{
+    position: relative;
+    left: 455px;
+    top: -700px;
+    width: 1100px;
+    height: 700px;/*esto porque está el menú en la parte superior...*/
+    /*border: none;*/
+}
+
+#submit{
+    font-family: Actor;
+    font-size:20px;
+    width: 175px;
+    height: 55px;     
+}
