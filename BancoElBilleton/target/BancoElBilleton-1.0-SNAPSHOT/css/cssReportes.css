@@ -44,7 +44,7 @@ h4{
     box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 15px 35px 0 rgba(0,0,0,0.19);    
 }
 
-#cintaOpciones{
+#cintaOpcionesReporte{
     margin-left: 250px;
     display: flex;
     align-items: center;
@@ -64,15 +64,15 @@ h4{
     border: solid;
     border-radius: 15px;
     width: 200px;
-    height: 700px;
+    height: 650px;
 }
 
 #frameReportes{
     position: relative;
     left: 455px;
-    top: -700px;
+    top: -650px;
     width: 1100px;
-    height: 700px;/*esto porque está el menú en la parte superior...*/
+    height: 650px;/*esto porque está el menú en la parte superior...*/
     /*border: none;*/
 }
 

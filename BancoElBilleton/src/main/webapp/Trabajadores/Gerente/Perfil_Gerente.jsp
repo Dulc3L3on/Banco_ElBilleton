@@ -17,7 +17,9 @@
         <form method="POST" action="Perfil_Gerente">                        
             <table cellspacing="25">
                 <th colspan="2">
-                    <img src="../../img/administrador.png" alt="iconoGerente">
+                    <center>
+                        <img src="../../img/administrador.png" alt="iconoGerente">
+                    </center>                                    
                 </th>                
                 <tr>
                     <th>

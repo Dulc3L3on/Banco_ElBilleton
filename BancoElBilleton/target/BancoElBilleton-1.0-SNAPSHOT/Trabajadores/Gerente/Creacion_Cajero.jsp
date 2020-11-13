@@ -9,10 +9,67 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="../../css/cssGerente.css">
         <title>CreateCashier</title>
     </head>
     <body>
-        <h1>Este lo crearás luego de tener la creación de cliente pues son muy similares<br/>
-        solo por el DPI y el cumple... de esta forma solo adaptas xD</h1>
+         <form method="POST" action="Creacion_Cajero.jsp" enctype="multipart/form-data"><!--si todo salió bien, entonces se refireccionará al servlet-->
+            <center>
+                <div id="general"><!--posiblemente lleve color xD o borde... o ambos xD-->
+                    <h1>>>CREAR CAJERO<<</h1>    
+                    <br/>
+                    <label style="position: relative; left:-250px;">>Datos del Nuevo Cliente</label>
+                    <table>                                          
+                        <tr>
+                            <th colspan='4'>
+                                <hr>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label><h5>Nombre:</h5></label>
+                            </th>
+                            <th>
+                                <input type="text" name="nombre" id="nombre" placeholde="Nombre" required>
+                            </th><!--OJO: los jsp que manden a tratar la info a un mismo servlet deben tener nombres distintos para campos de envío que sean del mismo tipo p.ej -> nombre... porque sino.... o no verdad, no hay problema, porque cada quien jalaría los datos en su propio bloque,dependiendo del argumento que envíen con el cual indicaran "quién" está enviando la info...-->                                                 
+                             <th>
+                                <label><h5>CUI:</h5></label>
+                            </th>
+                            <th>
+                                <input type="number" name="CUI" id="CUI" placeholde="CUI" required>
+                            </th>
+                        </tr>        
+                         <tr>
+                           <th>
+                                <label><h5>Correo:</h5></label>
+                            </th>
+                            <th>
+                                <input type="email" name="correo" id="correo" required><!--si quieres le mandas la fecha actual.... pero por ser "requerido" no hbará problemas de ausencia xD-->
+                            </th>
+                            <th>
+                                <label><h5>Dirección:</h5></label>
+                            </th>
+                            <th>
+                                <input type="text" name="direccion" id="direccion" required><!--si quieres le mandas la fecha actual.... pero por ser "requerido" no hbará problemas de ausencia xD-->
+                            </th>
+                        </tr>   
+                         <tr>                                                     
+                            <th>
+                                <label><h5>Género:</h5></label>
+                            </th>
+                            <th>
+                                 <select name="genero" id="genero" style="width: 225px;" required>
+                                    <option value="femenino">Femenino</option><!--no creo que sea necesario poner un vacío en el valor... creo que con no declararlo basta...-->
+                                    <option value="masculino">Masculino</option>
+                                </select>
+                            </th>
+                        </tr>                                           
+                    </table>                                   
+                    
+                    <input type="submit" id="submit" name="crearCajero" value="CREAR CAJERO" width="200px"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->                    
+                </div>
+                
+            </center>
+        </form>
     </body>
 </html>

@@ -13,7 +13,7 @@
         <title>CreateClient</title>
     </head>
     <body>
-         <form method="POST" action="Creacion_Cliente" enctype="multipart/form-data"><!--si todo salió bien, entonces se refireccionará al servlet-->
+         <form method="POST" action="Creacion_Cliente.jsp" enctype="multipart/form-data"><!--si todo salió bien, entonces se refireccionará al servlet-->
             <center>
                 <div id="general"><!--posiblemente lleve color xD o borde... o ambos xD-->
                     <h1>>>CREAR CLIENTE<<</h1>    
@@ -64,7 +64,7 @@
                                 <label><h5>Género:</h5></label>
                             </th>
                             <th>
-                                 <select name="genero" id="genero" width ="225px" required>
+                                 <select name="genero" id="genero" style="width: 225px;" required>
                                     <option value="femenino">Femenino</option><!--no creo que sea necesario poner un vacío en el valor... creo que con no declararlo basta...-->
                                     <option value="masculino">Masculino</option>
                                 </select>

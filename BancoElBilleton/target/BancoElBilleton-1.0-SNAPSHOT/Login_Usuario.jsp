@@ -18,8 +18,9 @@
             <div id ="banner">                
                 <img src="img/Logos_ElBilleton/logo1_0_ElBilleton.png" id="img">
             </div>                 
-            <div id="divLogin">                     
-                <form method="POST" accion="gestorLog">             
+            <div id="divLogin">      
+                
+                <form method="POST" action="gestorLogin">             
                   <table cellspacing="25">
                       <th>
                           <img src="img/profile.png" id="img">

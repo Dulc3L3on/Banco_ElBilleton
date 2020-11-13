@@ -14,7 +14,7 @@
         
     </head>
     <body>
-         <form method="POST" action="Modificacion_Cliente"><!--si todo salió bien, entonces se refireccionará al servlet-->
+         <form method="POST" action="Modificacion_Cliente.jsp"><!--si todo salió bien, entonces se refireccionará al servlet-->
             <center>
                 <div id="general"><!--posiblemente lleve color xD o borde... o ambos xD-->
                     <h1>>>MODIFICAR CLIENTE<<</h1>                                                                   
@@ -81,7 +81,7 @@
                                 <label><h5>Género:</h5></label>
                             </th>
                             <th>
-                                 <select name="genero" id="genero" width ="75px" readonly>
+                                 <select name="genero" id="genero" style="width: 175px;" readonly>
                                     <option value="femenino" selected>El que se add al crealo...</option><!--no creo que sea necesario poner un vacío en el valor... creo que con no declararlo basta...-->                                    
                                 </select>
                             </th>
@@ -95,7 +95,7 @@
                         
                     </table>                                   
                     
-                    <input type="submit" id="submit" name="crearCliente" value="ACTUALIZAR CLIENTE" width="200px"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->                    
+                    <input type="submit" id="submit" name="modificarCliente" value="ACTUALIZAR CLIENTE" width="200px"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->                    
                 </div>
                 
             </center>

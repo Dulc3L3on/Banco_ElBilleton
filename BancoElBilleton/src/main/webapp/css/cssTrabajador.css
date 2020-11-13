@@ -42,9 +42,14 @@ and open the template in the editor.
 }
 
 #menuCajero{
-    background: #136a8a; /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #136a8a, #267871); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #136a8a, #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #00467F;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A5CC82, #00467F);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A5CC82, #00467F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    /*prueba xD, sino el de abajito está muy bien, lo que pasa es que no se miraba l cambio entre caj y ger...*/
+    
+    /*background: #136a8a; /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #136a8a, #267871); /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #136a8a, #267871); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     
     /*background: #2b5876; /* fallback for old browsers */
     /*background: -webkit-linear-gradient(to right, #2b5876, #4e4376); /* Chrome 10-25, Safari 5.1-6 */
@@ -62,9 +67,9 @@ and open the template in the editor.
     float: right;    
 }
 
-#frameGerente{/*lo pongo aquí y no el css del gerente, porque es de la página principal, que también tiene cajero, a su manera, pero la posee xD*/
-   height: 800px;
+#frameGerente{/*lo pongo aquí y no el css del gerente, porque es de la página principal, que también tiene cajero, a su manera, pero la posee xD*/   
     width: 1900px;
+    height: 800px;/*por si colocas el logo al pie... sino pon 830 xD así no se pasa xD*/
     border: none;        
 }
 
