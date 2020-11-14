@@ -1,3 +1,13 @@
+Modelo/Herramientas/Conversor.class
+Modelo/Manejadores/DB/ManejadorDB.class
+Modelo/Manejadores/DB/Buscador.class
+Modelo/Herramientas/Transformador.class
+Modelo/Herramientas/GuardiaSeguridad.class
+Modelo/Manejadores/DB/Creador.class
+Modelo/Entidades/Usuario.class
 Controladores/GestorLogin.class
-Modelo/Manejadores/Web/ManejadorNavegacion.class
+Modelo/Entidades/Cliente.class
+Modelo/Entidades/Cajero.class
 Modelo/Kit.class
+Controladores/GestorCreacion.class
+Modelo/Manejadores/Web/ManejadorNavegacion.class

@@ -14,7 +14,7 @@
     </head>
     <body>
        <center>
-        <form method="POST" action="Perfil_Gerente.jsp"><!--al final de cuentas el action irá al servlet xD pues ahí se trabaja la info xD...-->
+        <form method="POST" action="Perfil_Cliente.jsp"><!--al final de cuentas el action irá al servlet xD pues ahí se trabaja la info xD...-->
             <table cellspacing="25">
                 <th colspan="2">
                     <center>

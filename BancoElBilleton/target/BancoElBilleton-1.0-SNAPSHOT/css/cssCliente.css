@@ -8,7 +8,8 @@ and open the template in the editor.
     Author     : phily
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Actor&family=Anton&family=Arima+Madurai&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Actor&family=Anton&family=Arima+Madurai&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Actor&family=Anton&family=Arima+Madurai&family=Bree+Serif&display=swap');
 
 body{
     font-family: Helvetica;
@@ -22,6 +23,9 @@ table{
 h1{
     font-family: Anton;    
     font-weight: bold;
+}
+h2{
+    font-family: 'Bree Serif';            
 }
 
 h3{

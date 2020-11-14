@@ -23,7 +23,7 @@ and open the template in the editor.
     margin-left: 50px;
     display: flex;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;   
    
    background: #BBD2C5;  /* fallback for old browsers */
    background: -webkit-linear-gradient(to right, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
@@ -43,7 +43,7 @@ and open the template in the editor.
 
     
     width: 300px;
-    height: 700px;    
+    height: 750px;    
 }
 
 
@@ -83,9 +83,9 @@ and open the template in the editor.
 #frameAccion{
     position: relative;
     left: 355px;
-    top: -700px;
+    top: -750px;
     width: 1300px;
-    height: 700px;
+    height: 750px;
     border: none;
     /*por el momento que se muestre el borde xD*/
 }
