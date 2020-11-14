@@ -32,7 +32,12 @@
                 
                     <table cellspacing="10px" cellpadding="5px">             
                         <tr>
-                            <label><h3>> Datos del dueño</h3></label>
+                            <th colspan="2">
+                           <h4>------------->>Datos del dueño<<-------------</h4>
+                       </th>
+                       <th colspan="2">
+                            <h4>----------->>Datos para depositar<<-----------</h4>
+                       </th>       
                         </tr>
                         <tr>
                             <th>
@@ -42,7 +47,7 @@
                                 <input type="text" name="nombre" id="nombre" readonly>
                             </th>
                             <th>
-                                <label><h5>Monto $.</h5></label>
+                                <label><h4>Monto $.</h4></label>
                             </th>
                             <th>
                                 <input type="number" name="monto" value="1" id="opDeposito" min="1" required>
@@ -55,8 +60,10 @@
                             <th>
                                 <input type="number" name="numeroCuenta" id="numeroCuenta" min="0" readonly>
                             </th>
-                            <th>
-                                <input type="submit" id="submit" name="depositar" value="DEPOSITAR"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->                                                                                                                                                                            
+                            <th colspan="2">
+                                <center>
+                                    <input type="submit" id="submit" name="depositar" value="DEPOSITAR"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->                                                                                                                                                                            
+                                </center>            
                             </th>
                          </tr>                                                       
                     </table>                                

@@ -17,11 +17,15 @@
         <h1>>>REPORTES<<</h1>
      </center>       
         
-        <div id="cintaOpcionesReporte" style="width:"500px;"><!--de reportes xD-->
-            <center>
-                <%for(int boton=0; boton <7; boton++){%>
-                    <input type="submit" class="button" id="submit" name="reportes" value="el que corresponde xD"><br/><br/>
-                <%}%>
+        <div id="cintaOpcionesReporteGerente" style="width:"500px;"><!--de reportes xD-->
+            <center>                
+                <input type="submit" class="button" id="submit" name="reportes" value="Historial de cambios"><br/><br/>
+                <input type="submit" class="button" id="submit" name="reportes" value="Clientes grandes transacciones"><br/><br/>
+                <input type="submit" class="button" id="submit" name="reportes" value="Clientes con grandes sumas"><br/><br/>
+                <input type="submit" class="button" id="submit" name="reportes" value="10 con mas dinero"><br/><br/>
+                <input type="submit" class="button" id="submit" name="reportes" value="Clientes desaparecidos"><br/><br/>
+                <input type="submit" class="button" id="submit" name="reportes" value="Historial Transacciones"><br/><br/>                
+                <input type="submit" class="button" id="submit" name="reportes" value="Cajero más eficiente"><br/><br/>                
             </center>            
         </div>               
             <iframe src="" title="Reportes" id="frameReportes">                   

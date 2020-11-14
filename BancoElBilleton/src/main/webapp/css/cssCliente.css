@@ -45,11 +45,16 @@ h4{
     font-family: Georgia;
 }
 
-#menu{
-   background: #606c88;  /* fallback for old browsers */
-   background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
-   background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+#menu{  
+    background: #606c88;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3f4c6b, #606c88);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3f4c6b, #606c88); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+/*    background: #0f0c29;  /* fallback for old browsers */
+/*    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+/*    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
     height: 75px;
 }
 
@@ -77,6 +82,15 @@ h4{
 #cintaOpciones{
     width: 500px;
     height:700px;    
+}
+
+#datosUsuario{
+    height: 25px;    
+}
+
+#acciones{/*hay que cambiarlo a submit para estandarizar...*/
+    height: 50px;
+    text-align: center;     
 }
 
 #submit{

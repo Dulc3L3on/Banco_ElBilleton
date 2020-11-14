@@ -16,6 +16,8 @@
         <form method="POST" action="Transferencia"><!--si todo salió bien, entonces se refireccionará al servlet-->
             <center>
                 <div id="general">
+                    <br/>
+                    <br/>
                     <h1>>>TRANSFERENCIA<<</h1>
             
                    <table cellspacing="10px" cellpadding="5px">
@@ -44,17 +46,17 @@
                     <table cellspacing="10px" cellpadding="5px">
                         <tr>
                             <th>
-                                <label><h5>Cuenta Origen:</h5></label>
+                                <label><h5>*Cuenta Origen:</h5></label>
                             </th>
                             <th>
-                                 <select name="cuentasDestino" id="opTransferencia" width ="75px" required>
+                                 <select name="cuentasDestino" id="opTransferencia" style="width: 250px" required>
                                     <option value="" disabled select >-Seleccione-</option><!--no creo que sea necesario poner un vacío en el valor... creo que con no declararlo basta...-->
                                 </select>
                             </th>
                         </tr>
                         <tr>
                             <th>
-                                <label><h5>Cuenta Receptora:</h5></label>
+                                <label><h5>*Cuenta Receptora:</h5></label>
                             </th>
                             <th>
                                 <input type="number" name="numeroCuenta" id="numeroCuenta" min="0" readonly="">
@@ -62,7 +64,7 @@
                         </tr>
                         <tr>
                             <th>
-                                <h4>Monto $.</h4>
+                                <h4>*Monto $.</h4>
                             </th>
                             <th>
                                 <input type="number" name="monto" value="1" id="opTransferencia" min="1" required>

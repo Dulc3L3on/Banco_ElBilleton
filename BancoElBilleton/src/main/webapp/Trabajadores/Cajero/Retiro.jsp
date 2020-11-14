@@ -31,8 +31,13 @@
                     </table>                                                                
                 
                     <table cellspacing="10px" cellpadding="5px">          
-                        <tr>
-                            <label><h3>> Datos registrados del dueño</h3></label>
+                        <tr>                            
+                           <th colspan="2">
+                               <h4>------------->>Datos del dueño<<-------------</h4>
+                           </th>
+                           <th colspan="2">
+                                <h4>----------->>Datos para debitar<<-----------</h4>
+                            </th>      
                         </tr>
                         <tr>
                             <th colspan="2" rowspan="2">
@@ -49,7 +54,7 @@
                         </tr>
                         <tr>
                             <th>
-                                <label><h5>Monto $.</h5></label>
+                                <label><h4>Monto $.</h4></label>
                             </th>
                             <th>
                                 <input type="number" name="monto" value="1" id="monto" min="1" required>
@@ -64,7 +69,7 @@
                             </th>      
                              <th colspan="2">
                                 <center>
-                                     <input type="submit" id="submit" name="depositar" value="DEPOSITAR"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->
+                                     <input type="submit" id="submit" name="retirar" value="RETIRAR"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->
                                 </center>        
                             </th><!--debería aparecer a la par de nombre... pero por el rowspan creo que aparecerá a la par del DPI...-->
                         </tr>

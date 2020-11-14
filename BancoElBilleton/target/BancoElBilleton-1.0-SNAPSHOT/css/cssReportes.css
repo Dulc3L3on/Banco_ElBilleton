@@ -44,7 +44,7 @@ h4{
     box-shadow: 0 10px 14px 0 rgba(0,0,0,0.24), 0 15px 35px 0 rgba(0,0,0,0.19);    
 }
 
-#cintaOpcionesReporte{
+#cintaOpcionesReporteGerente{
     margin-left: 250px;
     display: flex;
     align-items: center;
@@ -65,6 +65,43 @@ h4{
     border-radius: 15px;
     width: 200px;
     height: 650px;
+}
+
+#cintaOpcionesReporteCajero{
+    margin-left: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /*background: #414d0b;  /* fallback for old browsers */
+    /*background: -webkit-linear-gradient(to right, #727a17, #414d0b);  /* Chrome 10-25, Safari 5.1-6 */
+    /*background: linear-gradient(to right, #727a17, #414d0b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background: #808080;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3fada8, #808080);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3fada8, #808080); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    
+    border: solid;
+    border-radius: 15px;
+    width: 200px;
+    height: 650px;
+}
+
+#cintaOpcionesReporteCliente{
+    margin-left: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: #5D4157;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #A8CABA, #5D4157);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #A8CABA, #5D4157); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    border: solid;
+    border-radius: 15px;
+    width: 200px;
+    height: 650px;    
 }
 
 #frameReportes{

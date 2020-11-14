@@ -77,4 +77,44 @@ public class ManejadorNavegacion {
             2. 2 sino entonces mostrar la página de error que es universal [o en todo caso el msje xD}
         */
     
+    public String darPaginasAlCajero(String opcionSeleccionada){
+        if(opcionSeleccionada!=null){
+            switch(opcionSeleccionada){
+                case "DEPOSITO":
+                    return "Deposito.jsp";
+                case "RETIRO":
+                    return "Retiro.jsp";
+                case "REPORTES":
+                    return "Reportes_Cajero.jsp";                   
+            }
+        }        
+        return "Perfil_Cajero.jsp";
+    }
+    
+    
+    public String darPaginasAlCliente(String opcionSeleccionada){
+        if(opcionSeleccionada!=null){
+            switch(opcionSeleccionada){
+                case "TRANSFERENCIA":
+                    return "Transferencia.jsp";
+                case "ASOCIACION":
+                    return "Asociacion.jsp";
+                case "REPORTES":
+                    return "Reportes_Cliente.jsp";                   
+            }
+        }        
+        return "Perfil_Cliente.jsp";
+    }
+    
+    public String darPaginasAsociacion(String opcionSeleccionada){
+        if(opcionSeleccionada!=null){
+            switch(opcionSeleccionada){                                    
+                case "RECIBIDAS":
+                    return "";//esto es con JR... pero creo que tb habrá que crear su propia pag... o ser la misma que a que está en reportes, no la que tiene los btn sino la que está en el frame...
+                case "REDACTADAS":
+                    return "";                   
+            }
+        }        
+        return "Enviar_Asociacion.jsp";//tendŕia que ser la de recibidas la pág default... pero aún no tengo la pág para el JR... ahí lo cb xD
+    }
 }

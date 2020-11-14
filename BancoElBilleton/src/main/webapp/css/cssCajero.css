@@ -37,6 +37,15 @@ h4{
     background-color: gainsboro;
 }
 
+#datosUsuario{
+    height: 25px;    
+}
+
+#acciones{/*hay que cambiarlo a submit para estandarizar...*/
+    height: 50px;
+    text-align: center;     
+}
+
 #subtitulo{
     position: relative;
     left: 15px;    
