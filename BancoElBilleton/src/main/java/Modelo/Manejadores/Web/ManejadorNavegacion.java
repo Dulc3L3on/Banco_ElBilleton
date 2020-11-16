@@ -17,18 +17,19 @@ public class ManejadorNavegacion {
      * @return 
      */
     public String darPaginasPrincipales(String tipoUsuario){
-        switch(tipoUsuario){
-            case "cliente":
-                return "Cliente/Home_Cliente.jsp";
-            case "cajero":
-                return "Trabajadores/Cajero/Home_Cajero.jsp";
-            case "gerente":
-                return "Trabajadores/Gerente/Home_Gerente.jsp";        
-        }
-        
-        return null;//pero aquí jamás debería llegar, puesto que no se ejecutará 
-       //este bloque, al menos que todo haya salido bien, es decir el nombre de usuario 
-       //y contra estén correctos... pero de todos modos sería bueno que tuvieas una página de error...
+      if(tipoUsuario!=null){
+            switch(tipoUsuario){
+                case "cliente":
+                    return "Cliente/Home_Cliente.jsp";
+                case "cajero":
+                    return "Trabajadores/Cajero/Home_Cajero.jsp";
+                case "gerente":
+                    return "Trabajadores/Gerente/Home_Gerente.jsp";             
+            }            
+      }
+      return "Login_Usuario.jsp";//pero aquí jamás debería llegar, puesto que no se ejecutará 
+      //este bloque, al menos que todo haya salido bien, es decir el nombre de usuario 
+      //y contra estén correctos... pero de todos modos sería bueno que tuvieas una página de error...
     }
     
     public String darPaginasAlGerente(String opcionSeleccionada){
@@ -52,6 +53,8 @@ public class ManejadorNavegacion {
                     return "Creacion_Cajero.jsp";
                 case "Cliente":
                     return "Creacion_Cliente.jsp";
+                case "Gerente":
+                    return "Creacion_Gerente.jsp";
             }        
         }        
         return "Creacion_Cuentas.jsp";           

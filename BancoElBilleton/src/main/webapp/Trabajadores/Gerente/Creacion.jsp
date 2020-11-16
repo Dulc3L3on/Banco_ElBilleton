@@ -22,6 +22,7 @@
                 <input type="submit" class="button" id="submit" name="opcion" value="Cuenta"><br/><br/>
                 <input type="submit" class="button" id="submit" name="opcion" value="Cajero"><br/><br/><!--si llegar a haber problema con el hecho de tener los mismo nombre para los input, entonces solo camiale el nombre a cada grupo xd, aunque lo dudo por el hecho de ser realizados los procesos por el correspondiente servlet general de cada "agrupación"-->
                 <input type="submit" class="button" id="submit" name="opcion" value="Cliente"><br/><br/>
+                <input type="submit" class="button" id="submit" name="opcion" value="Gerente"><br/><br/>
             </form>
             
         </div>

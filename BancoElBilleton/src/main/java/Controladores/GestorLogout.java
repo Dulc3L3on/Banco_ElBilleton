@@ -1,0 +1,34 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Controladores;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ *
+ * @author phily
+ */
+
+@WebServlet("/gestorLogout")
+public class GestorLogout extends HttpServlet{//creo que tendré que hacer 1 por cada usuario, por el hecho de tener + de 1 pág de perfil... a menos que hubiera hecho un menu general... pero no me convenía xD
+
+    @Override
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        request.getSession().removeAttribute("codigo");        
+        request.getSession().invalidate();
+
+        response.sendRedirect(request.getContextPath() + "/Login_Usuario.jsp");
+    }
+    
+    
+    
+}

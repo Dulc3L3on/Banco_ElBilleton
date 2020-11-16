@@ -9,11 +9,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="../../css/cssGerente.css">
+        <link rel="stylesheet" href="../../css/cssGerente.css">            
         <title>CreateCashier</title>
     </head>
     <body>
-         <form method="POST" action="../../gestorCreacion"><!--si todo salió bien, entonces se refireccionará al servlet-->
+         <form method="POST" action="../../gestorCreacionCajero"><!--si todo salió bien, entonces se refireccionará al servlet-->
             <center>
                 <div id="general"><!--posiblemente lleve color xD o borde... o ambos xD-->
                     <h1>>>CREAR CAJERO<<</h1>    
@@ -69,9 +69,8 @@
                         </tr>                                           
                     </table>                                                      
                     <input type="submit" id="submit" name="submit" value="CREAR CAJERO" width="200px"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->                    
-                </div>
-               
+                </div>               
             </center>
-        </form>
+        </form>      
     </body>
 </html>

@@ -10,13 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="css/cssUsuario.css">
-        <title>UserLogin</title>
-        
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>  
+        <title>UserLogin</title>        
     </head>
     <body class="cuerpo">
         <center>
             <div id ="banner">                
-                <img src="img/Logos_ElBilleton/logo1_0_ElBilleton.png" id="img">
+                <img src="img/Logos_ElBilleton/logo1_0_ElBilleton.png" id="img">                
             </div>                 
             <div id="divLogin">      
                 
@@ -27,7 +27,7 @@
                       </th>
                       <tr>
                           <th>
-                              <input type="text" id="userData" name="username" placeholder="Username" required>
+                              <input type="text" id="userData" name="username" placeholder="Username [codigo usuario]" required>
                           </th><!--si quieres recibir la info en un arreglo entonces nombra a estos comp IGUAL xd-->
                       </tr>
                       <tr>
@@ -46,15 +46,17 @@
                                <input type="radio" name="tipoUsuario" value ="gerente" id="gerente">
                                <label for="gerente">Gerente</label>
                             </th>
-                      </tr>
-                          
+                      </tr>                          
                       <tr>
                           <th>
                               <input type ="submit" id="infoLog" name="login" value="LOGIN">
-                          </th>
-                      </tr>                                                
+                          </th>                          
+                      </tr>                      
                   </table>                                       
                 </form>
+                 <%if(request.getSession().getAttribute("mostrarErrorLog")!=null){%><!--pero debes revisar que no provoque problemas por el hecho de no borrarlo, o de colocar la línea para borrarlo pero no se elimina...-->
+                          <script src="js/sweetErrorLogin.js"></script>
+                 <%}%>
             </div>                     
         </center>               
     </body>

@@ -51,7 +51,10 @@
                     </th>
                 </tr>
             </table>     <!--SI NO llegara a ser así, entoces deberás buscar nuevamente al administrador para tener los datos correctos, esto luego de haber realizado la actualización y de haber salido todo nice xD-->                               
-                    <input type="submit" id="acciones" name="accion"  value="CERRAR SESION">
+            <form method="GET" action="../gestorLogout"><!--recuerda que parece ser que solo 1 página puede resdirigir a un servlet en cuetsión, es decir que a él solo se puede llegar por una vía...[si es así entonces un logut por cada usuario :v, de todos modos prueba xD-->
+                <input type="submit" id="acciones" name="accion"  value="CERRAR SESION">
+            </form>
+                
             
         </form>
     </center>
