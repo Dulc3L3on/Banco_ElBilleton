@@ -103,7 +103,7 @@ public class Buscador {
         return null;
     }
     
-    public ListaEnlazada<Cambio> buscarHistorailCambiosCliente(int codigo, int codigoGerente){
+    public ListaEnlazada<Cambio> buscarHistorialCambiosCliente(int codigo, int codigoGerente){
         String buscar ="SELECT * FROM Cambios_Cliente WHERE codigoCliente = ? AND gerenteACargo = ? AND fecha = "+ herramientas.darFechaActualString();
         
         try(PreparedStatement instrucciones = conexion.prepareStatement(buscar, ResultSet.TYPE_SCROLL_SENSITIVE, 
@@ -192,5 +192,7 @@ public class Buscador {
             System.out.println("Error al buscar las cuentas del SOLICITANTE de RETIRO"+ e.getMessage());
         }
         return null;        
-    }
+    }//si lo hubieras pensado un poco más te hubieras dado cuenta que hubiera sioo mejor devolver una lista, por el hecho de que esto mismo sería necesitado después, pero por esto te diste cuetna que requieres 1 buscador para lo que necesiten los trabajadores y uno para lo que necesite el cliente...   
+  
+    
 }

@@ -18,8 +18,11 @@
      </center>       
         
         <div id="cintaOpcionesReporteCliente" style="width:"500px;"><!--de reportes xD-->
-            <center>                
-                <input type="submit" class="button" id="submit" name="reportes" value="15 Últimas Transacciones"><br/><br/>
+            <center>  
+                <form method="GET" action="../gestorReporte15Grandes">
+                    <input type="submit" class="button" id="submit" name="reportes" value="15 Últimas Transacciones"><br/><br/>
+                </form>
+                
                 <input type="submit" class="button" id="submit" name="reportes" value="Todas las Transacciones"><br/><br/>
                 <input type="submit" class="button" id="submit" name="reportes" value="Clientes con grandes sumas"><br/><br/>
                 <input type="submit" class="button" id="submit" name="reportes" value="Cuenta con + dinero"><br/><br/>                

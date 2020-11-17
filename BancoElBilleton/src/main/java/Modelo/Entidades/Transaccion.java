@@ -12,16 +12,17 @@ package Modelo.Entidades;
 public class Transaccion {
     private int codigo;
     private int numeroCuentaAfectada;
-    private String tipo;
+    private String TipoTransaccion;
     private int monto;
     private String fecha;
     private String hora;
     private int codigoCajero;
     
-    public Transaccion(int elCodigo, int elNumeroCuenta, String elTipo, int elMonto, String laFecha, String laHora, int elCodigoCajero){
+    public Transaccion(int elCodigo, int elNumeroCuenta, String elTipo, int elMonto, 
+            String laFecha, String laHora, int elCodigoCajero){
         codigo = elCodigo;
         numeroCuentaAfectada = elNumeroCuenta;
-        tipo = elTipo; 
+        TipoTransaccion = elTipo; 
         monto = elMonto; 
         fecha = laFecha; 
         hora = laHora;
@@ -33,7 +34,7 @@ public class Transaccion {
     }
     
     public String darTipoTransaccion(){
-        return tipo;
+        return TipoTransaccion;
     }
     
     public int darMonto(){

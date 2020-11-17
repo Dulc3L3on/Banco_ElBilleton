@@ -5,12 +5,17 @@
  */
 package Modelo.Herramientas;
 
+import Modelo.Entidades.Cambio;
 import Modelo.Entidades.Cuenta;
+import Modelo.Entidades.Transaccion;
 import Modelo.Entidades.Usuarios.Cajero;
 import Modelo.Entidades.Usuarios.Cliente;
 import Modelo.Entidades.Usuarios.Gerente;
+import Modelo.ListaEnlazada;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -63,29 +68,7 @@ public class Transformador {
             System.out.println("Error al transformar al GERENTE: "+ ex.getMessage());
         }
         return null;
-    }
-    
-    /*DEPRECATED!!!*/
-    public String[] transformarDatosCliente(ResultSet resultado){//deprecated xD al menos para la modificacion...
-        String datosCliente[] = new String[8];//tendrá el mismo orden que en la DB [el cual es igual al constructor del CLiente]
-        try {
-            resultado.first();
-            
-            datosCliente[0] = String.valueOf(resultado.getInt(1));
-            datosCliente[1] = resultado.getString(2);//nombre
-            datosCliente[2] = resultado.getString(3);//CUI
-            datosCliente[3] = resultado.getString(4);//pathDPI
-            datosCliente[4] = resultado.getString(5);//direccion
-            datosCliente[5] = resultado.getString(6);//sexo
-            datosCliente[6] = resultado.getString(7);//password
-            datosCliente[7] = resultado.getString(8);//birth
-            
-           return datosCliente;                    
-        } catch (SQLException ex) {
-            System.out.println("Error al transformar a CLIENTE: "+ ex.getMessage());
-        } 
-        return null;       
-    }
+    }   
     
     public Cuenta[] transformarACuentas(ResultSet resultado){
         Cuenta[] cuentas;
@@ -106,5 +89,49 @@ public class Transformador {
             System.out.println("Error al transformar las CUENTAS: "+ e.getMessage());
         }
         return null;        
+    }
+    
+    public void transformarAListaDeNumerosCuenta(ResultSet resultado, ListaEnlazada<Integer> listadoNumeroCuentas){                
+        try{
+            resultado.first();
+            
+            while(resultado.next()){
+                listadoNumeroCuentas.anadirAlFinal(resultado.getInt(1));
+            }                       
+        }catch(SQLException e){
+            System.out.println("Error al transformar #Cuenta:"+e.getMessage());
+        }    
+    }//es decir que puede deolver: una lista vacía, una lista "a medias" y la lista completa de los números de cuenta... [la lista vacía solo sucedería cuando la lista recibida en los paráms, aún no haya recibido algo con anteioreidad.
+    
+    public List<Cambio> transformarAListaDeCambios(ResultSet resultado){
+        List<Cambio> listadoDeCambios = new LinkedList<>();
+        
+        try{
+            resultado.first();
+            
+            while(resultado.next()){
+                listadoDeCambios.add(new Cambio(resultado.getString(1), resultado.getString(2), 
+                        resultado.getInt(3), resultado.getString(4), resultado.getString(5), resultado.getString(6)));
+            }                        
+        }catch(SQLException sqlE){
+            System.out.println("Error al transformar a LISTADO de cambios: "+ sqlE.getMessage());
+        }
+        return listadoDeCambios;
+    }
+    
+     public List<Transaccion> transformarAListaDeTransacciones(ResultSet resultado){
+        List<Transaccion> listadoDeCambios = new LinkedList<>();
+        
+        try{
+            resultado.first();
+            
+            while(resultado.next()){
+                listadoDeCambios.add(new Transaccion(resultado.getInt(1), resultado.getInt(2), resultado.getString(3),
+                resultado.getInt(4), resultado.getString(5), resultado.getString(6), resultado.getInt(7)));
+            }                        
+        }catch(SQLException sqlE){
+            System.out.println("Error al transformar a LISTADO de cambios: "+ sqlE.getMessage());
+        }
+        return listadoDeCambios;
     }
 }

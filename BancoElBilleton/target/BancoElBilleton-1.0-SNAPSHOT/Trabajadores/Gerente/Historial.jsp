@@ -71,16 +71,16 @@
                          for(int cambio =1; cambio <= listado.darTamanio(); cambio++){%>
                              <tr>
                                 <th>
-                                    <h5><%=nodoAuxiliar.contenido.darHora()%></h5>
+                                    <h5><%=nodoAuxiliar.contenido.getHora()%></h5>
                                 </th>
                                 <th>
-                                    <h5><%=nodoAuxiliar.contenido.darTipo()%></h5>
+                                    <h5><%=nodoAuxiliar.contenido.getTipo()%></h5>
                                 </th>
                                 <th>
-                                    <h5><%=nodoAuxiliar.contenido.darDatoAntiguo()%></h5>
+                                    <h5><%=nodoAuxiliar.contenido.getDatoAntiguo()%></h5>
                                 </th>
                                 <th>
-                                    <h5><%=nodoAuxiliar.contenido.darDatoNuevo()%></h5>
+                                    <h5><%=nodoAuxiliar.contenido.getDatoNuevo()%></h5>
                                 </th>
                             </tr>                            
                           <%nodoAuxiliar = nodoAuxiliar.nodoSiguiente; 
@@ -91,7 +91,10 @@
                 }else{%>                                    
                  <h3>Información intacta, sin cambios que mostrar</h3>
               <%}%>
-                 <input type="submit" id="submit" name="sumbmit" value="VER HISTORIAL COMPLETO">
+              <form method="GET" action="gestorExportacionHistorial">
+                 <input type="submit" id="submit" name="sumbmit" value="VER HISTORIAL COMPLETO"> 
+              </form>
+                 
              <%}%>                                     
             
          <%}%> 

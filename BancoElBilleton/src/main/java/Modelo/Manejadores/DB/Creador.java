@@ -15,6 +15,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -26,21 +27,23 @@ public class Creador {
     private Kit herramientas = new Kit();
     
     public Cajero crearCajero(String datosUsuario[]){
-        String crear ="INSERT INTO Cajero (codigo, nombre, DPI, direccion, sexo, password, turno) VALUES(?,?,?,?,?,?,?)";              
+        String crear ="INSERT INTO Cajero (nombre, DPI, direccion, sexo, password, turno) VALUES(?,?,?,?,?,?)";              
         String contrasenia = "contrasenia";
         
-        try(PreparedStatement instrucciones = conexion.prepareStatement(crear)){            
-            
-            instrucciones.setInt(1, 771901);//codigo [sera eli]            
-            instrucciones.setString(2, datosUsuario[0]);//nombre
-            instrucciones.setString(3, datosUsuario[1]);//DPI
-            instrucciones.setString(4, datosUsuario[2]);//direccion
-            instrucciones.setString(5, datosUsuario[3]);//sexo
-            instrucciones.setString(6, herramientas.encriptarContrasenia(contrasenia));//password [será susti, por lo que devuleva el método generador de contraseñas...]
-            instrucciones.setString(7, datosUsuario[4]);//turno
+        try(PreparedStatement instrucciones = conexion.prepareStatement(crear, Statement.RETURN_GENERATED_KEYS)){                        
+                      
+            instrucciones.setString(1, datosUsuario[0]);//nombre
+            instrucciones.setString(2, datosUsuario[1]);//DPI
+            instrucciones.setString(3, datosUsuario[2]);//direccion
+            instrucciones.setString(4, datosUsuario[3]);//sexo
+            instrucciones.setString(5, herramientas.encriptarContrasenia(contrasenia));//password [será susti, por lo que devuleva el método generador de contraseñas...]
+            instrucciones.setString(6, datosUsuario[4]);//turno
             
             instrucciones.executeUpdate();//Recuerda que debes recueprar el numero de código y la contra la obtendrás del método que se encarga de generarla aleatoriamente...
-            return conversor.convertirACajero(datosUsuario, 771901, contrasenia);//Esta sería la desencriptada...
+
+            ResultSet resultado = instrucciones.getGeneratedKeys();
+            resultado.first();
+            return conversor.convertirACajero(datosUsuario, resultado.getInt(1), contrasenia);//Esta sería la desencriptada...
             
         }catch(SQLException sqlE){
             System.out.println("Error al crear el cajero: "+ sqlE.getMessage());            
@@ -51,21 +54,23 @@ public class Creador {
     //lo harás luego de tener la carga de datos...
     
     public Cliente crearCliente(String datosUsuario[], String path){
-        String crear = "INSERT INTO Cliente (codigo, nombre, DPI, pathDPI, direccion, sexo, password, birth) VALUES(?,?,?,?,?,?,?,?)";
+        String crear = "INSERT INTO Cliente (nombre, DPI, pathDPI, direccion, sexo, password, birth) VALUES(?,?,?,?,?,?,?)";
         String contrasenia = "password";//Aquí el método para generarlas aleatoriamente xD
         
-        try(PreparedStatement instrucciones = conexion.prepareStatement(crear)){
-            instrucciones.setInt(1, 235235);
-            instrucciones.setString(2,datosUsuario[0]);
-            instrucciones.setString(3,datosUsuario[1]);
-            instrucciones.setString(4, path);//este será el nombre del documento, el cual agregarás a la dirección en la que se almacenan todos los DPI, por lo cual podrás obtener el que corresponde, media vez obtengas este nombre... xD, depkano que se tendrá que agarrar luego de haberlo "subido" al servidor... entonces piensa como vas a llamar al servlet subidor...
-            instrucciones.setString(5, datosUsuario[2]);
-            instrucciones.setString(6, datosUsuario[3]);
-            instrucciones.setString(7, herramientas.encriptarContrasenia(contrasenia));
-            instrucciones.setString(8, datosUsuario[4]);            
+        try(PreparedStatement instrucciones = conexion.prepareStatement(crear, Statement.RETURN_GENERATED_KEYS)){            
+            instrucciones.setString(1,datosUsuario[0]);
+            instrucciones.setString(2,datosUsuario[1]);
+            instrucciones.setString(3, path);//este será el nombre del documento, el cual agregarás a la dirección en la que se almacenan todos los DPI, por lo cual podrás obtener el que corresponde, media vez obtengas este nombre... xD, depkano que se tendrá que agarrar luego de haberlo "subido" al servidor... entonces piensa como vas a llamar al servlet subidor...
+            instrucciones.setString(4, datosUsuario[2]);
+            instrucciones.setString(5, datosUsuario[3]);
+            instrucciones.setString(6, herramientas.encriptarContrasenia(contrasenia));
+            instrucciones.setString(7, datosUsuario[4]);            
             
             instrucciones.executeUpdate();
-            return conversor.convertirACliente(datosUsuario, 235235, contrasenia, path);
+            
+            ResultSet resultado = instrucciones.getGeneratedKeys();
+            resultado.first();
+            return conversor.convertirACliente(datosUsuario, resultado.getInt(1), contrasenia, path);
             
         }catch(SQLException sqlE){
             System.out.println("Error al crear el cliente: "+ sqlE.getMessage());           
@@ -74,21 +79,23 @@ public class Creador {
     }  
     
     public Gerente crearGerente(String datosUsuario[]){
-        String crear = "INSERT INTO Gerente (codigo, nombre, DPI, direccion, sexo, password, turno) VALUES(?,?,?,?,?,?,?)";
+        String crear = "INSERT INTO Gerente (nombre, DPI, direccion, sexo, password, turno) VALUES(?,?,?,?,?,?)";
         String contrasenia = "pass";
         
-        try(PreparedStatement instrucciones = conexion.prepareStatement(crear)){            
-            
-            instrucciones.setInt(1, 7778);//codigo [sera eli]            
-            instrucciones.setString(2, datosUsuario[0]);//nombre
-            instrucciones.setString(3, datosUsuario[1]);//DPI
-            instrucciones.setString(4, datosUsuario[2]);//direccion
-            instrucciones.setString(5, datosUsuario[3]);//sexo
-            instrucciones.setString(6, herramientas.encriptarContrasenia(contrasenia));//password [será susti, por lo que devuleva el método generador de contraseñas...]
-            instrucciones.setString(7, datosUsuario[4]);//turno
+        try(PreparedStatement instrucciones = conexion.prepareStatement(crear, Statement.RETURN_GENERATED_KEYS)){                        
+                      
+            instrucciones.setString(1, datosUsuario[0]);//nombre
+            instrucciones.setString(2, datosUsuario[1]);//DPI
+            instrucciones.setString(3, datosUsuario[2]);//direccion
+            instrucciones.setString(4, datosUsuario[3]);//sexo
+            instrucciones.setString(5, herramientas.encriptarContrasenia(contrasenia));//password [será susti, por lo que devuleva el método generador de contraseñas...]
+            instrucciones.setString(6, datosUsuario[4]);//turno
             
             instrucciones.executeUpdate();
-            return conversor.convertirAGerente(datosUsuario, 7778, contrasenia);
+            
+            ResultSet resultado = instrucciones.getGeneratedKeys();
+            resultado.first();
+            return conversor.convertirAGerente(datosUsuario, resultado.getInt(1), contrasenia);
             
         }catch(SQLException sqlE){
             System.out.println("Error al crear el gerente: "+ sqlE.getMessage());
@@ -105,16 +112,15 @@ public class Creador {
      * @return
      */
     public int reservarEspacioCuenta(int codigoDueno){
-        String crearReserva = "INSERT INTO Cuentas_Propias (numeroCuenta, codigoDueno) VALUES(?,?)";
+        String crearReserva = "INSERT INTO Cuentas_Propias (codigoDueno) VALUES(?)";
         
-        try(PreparedStatement instrucciones = conexion.prepareStatement(crearReserva)){                                                
-            instrucciones.setInt(1, 778998);//esto sera eli, [autoIncre]
-            instrucciones.setInt(2, codigoDueno);
+        try(PreparedStatement instrucciones = conexion.prepareStatement(crearReserva, Statement.RETURN_GENERATED_KEYS)){                                                            
+            instrucciones.setInt(1, codigoDueno);
             
             instrucciones.executeUpdate();
-            /*ResultSet resultado= instrucciones.getGeneratedKeys();            
-            return resultado.getInt(1);//se devuleve el #cuenta...*///hasta que sea autoIncre...
-            return 778998;            
+            ResultSet resultado= instrucciones.getGeneratedKeys();            
+            resultado.first();
+            return resultado.getInt(1);//se devuleve el #cuenta...*///hasta que sea autoIncre...                      
         }catch(SQLException sqlE){
             System.out.println("Error al completar la creacion de la cuenta: "+ sqlE.getMessage());           
         }              

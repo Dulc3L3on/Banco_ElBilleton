@@ -5,11 +5,13 @@
  */
 package Modelo.Entidades;
 
+import java.io.Serializable;
+
 /**
  *
  * @author phily
  */
-public class Cambio {
+public class Cambio implements Serializable{
     private int gerenteACargo;
     private String fecha;
     private String hora;
@@ -26,27 +28,27 @@ public class Cambio {
         datoAntiguo = elDatoAntiguo;        
     }
     
-    public int darGerenteACargo(){
+    public int getGerenteACargo(){
         return gerenteACargo;
     }
     
-    public String darFecha(){
+    public String getFecha(){
         return fecha;
     }
     
-    public String darHora(){
+    public String getHora(){
         return hora;
     }
     
-    public String darTipo(){
+    public String getTipo(){
         return tipo;
     }
     
-    public String darDatoNuevo(){
+    public String getDatoNuevo(){
         return datoNuevo;
     }
     
-    public String darDatoAntiguo(){
+    public String getDatoAntiguo(){
         return datoAntiguo;
     }       
 }//puesto que solo se necesota de una entidad en específico... y si guardo el dato, sería redundante, muy redundante... xD

@@ -5,7 +5,9 @@ Modelo/Manejadores/DB/Actualizador.class
 Modelo/Entidades/Usuarios/Cajero.class
 Modelo/Manejadores/DB/Creador.class
 Controladores/GestorCreacionGerente.class
+Controladores/GestorReporte15Grandes.class
 Modelo/Nodo.class
+Controladores/GestorTransferencia.class
 Controladores/GestorLogout.class
 Modelo/ListaEnlazada.class
 Modelo/Entidades/Transaccion.class
@@ -25,9 +27,13 @@ Controladores/GestorRecargaDPI.class
 Modelo/Entidades/Cuenta.class
 Controladores/GestorCreacionCajero.class
 Controladores/GestorLogin.class
+Controladores/GestorExportacionHistorialCompleto.class
 Modelo/Entidades/Usuarios/Usuario.class
 Controladores/GestorModificacionGerente.class
 Controladores/GestorCreacionCuenta.class
 Modelo/Entidades/Cambio.class
 Modelo/Kit.class
+Modelo/Manejadores/DB/BuscadorParaCliente.class
 Controladores/GestorRetiro.class
+Modelo/Entidades/Asociacion.class
+Modelo/Manejadores/DB/BuscadorParaReportes.class

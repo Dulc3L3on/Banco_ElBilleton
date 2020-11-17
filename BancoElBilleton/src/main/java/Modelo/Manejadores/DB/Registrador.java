@@ -12,7 +12,9 @@ import Modelo.Kit;
 import Modelo.ListaEnlazada;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  *
@@ -95,27 +97,29 @@ public class Registrador {
     }
     
     public Transaccion registrarTrasaccion(int codigoCajero, String numeroCuenta, String monto, String tipo){
-    String registrar = "INSERT INTO Transaccion (codigo, numeroCuentaAfectada, "
-                + "tipoTransaccion, monto, fecha, hora, codigoCajero) VALUES (?,?,?,?,?,?,?)";
+    String registrar = "INSERT INTO Transaccion (numeroCuentaAfectada, "
+                + "tipoTransaccion, monto, fecha, hora, codigoCajero) VALUES (?,?,?,?,?,?)";
         
-        try(PreparedStatement instrucciones = conexion.prepareStatement(registrar)){
+        try(PreparedStatement instrucciones = conexion.prepareStatement(registrar, Statement.RETURN_GENERATED_KEYS)){
             int numeroDeCuenta = Integer.parseInt(numeroCuenta);                 
             int montoDeposito = Integer.parseInt(monto);
-            String hora = herramientas.darHoraActual();
-            
-            instrucciones.setInt(1, 1247773);//codigo de la transaccion [autoIncre...]       
-            instrucciones.setInt(2, numeroDeCuenta);
-            instrucciones.setString(3, tipo);// == deposito [para el otro debes usar debito...]
-            instrucciones.setInt(4, montoDeposito);
-            instrucciones.setString(5, herramientas.darFechaActualString());
-            instrucciones.setString(6, hora);
-            instrucciones.setInt(7, codigoCajero);
+            String hora = herramientas.darHoraActual();            
+                
+            instrucciones.setInt(1, numeroDeCuenta);
+            instrucciones.setString(2, tipo);// == deposito [para el otro debes usar debito...]
+            instrucciones.setInt(3, montoDeposito);
+            instrucciones.setString(4, herramientas.darFechaActualString());
+            instrucciones.setString(5, hora);
+            instrucciones.setInt(6, codigoCajero);
             
             instrucciones.executeUpdate();
-            return conversor.convertirATransaccion(1247773, numeroDeCuenta, "deposito", montoDeposito, herramientas.darFechaActualString(), hora, codigoCajero);
+            
+            ResultSet resultado= instrucciones.getGeneratedKeys();            
+            resultado.first();
+            return conversor.convertirATransaccion(resultado.getInt(1), numeroDeCuenta, "deposito", montoDeposito, herramientas.darFechaActualString(), hora, codigoCajero);
             
         } catch (SQLException | NumberFormatException e) {
-            System.out.println("Error al REGISTRAR el deposito: " + e.getMessage());
+            System.out.println("Error al REGISTRAR el"+ tipo +":"  + e.getMessage());
         }
         return null;        
     }
