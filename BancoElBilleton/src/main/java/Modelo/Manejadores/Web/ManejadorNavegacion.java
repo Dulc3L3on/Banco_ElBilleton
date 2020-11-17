@@ -65,6 +65,8 @@ public class ManejadorNavegacion {
             switch(tipoModificacion){                
                 case "Cajero":
                     return "Modificacion_Cajero.jsp";
+                case "Gerente":
+                    return "Modificacion_Gerente.jsp";
             }        
         }        
         return "Modificacion_Cliente.jsp";         

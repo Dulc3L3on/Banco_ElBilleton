@@ -63,7 +63,7 @@ and open the template in the editor.
     height: 75px;
 }
 
-#perfil{
+#perfil, #off{
     float: right;    
 }
 

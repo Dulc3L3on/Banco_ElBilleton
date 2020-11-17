@@ -5,13 +5,10 @@
  */
 package Controladores;
 
-import Modelo.Entidades.Usuarios.Cajero;
 import Modelo.Entidades.Usuarios.Cliente;
 import Modelo.Entidades.Usuarios.Gerente;
-import Modelo.Entidades.Usuarios.Usuario;
 import Modelo.Manejadores.DB.Actualizador;
 import Modelo.Manejadores.DB.Buscador;
-import Modelo.Manejadores.DB.Creador;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -48,9 +45,11 @@ public class GestorModificacionCliente extends HttpServlet{
                 //Aquí tendría que ir el if para revisar si el valor del checkbox !=null para llamar al método de creación aleatoria y de esa forma la posición en datos que contenía la antigua, actualice su valor para hacer bien la comparación...
                 System.out.println("sesión modificador -> "+ request.getSession());
                 System.out.println("codigo -> "+ request.getSession().getAttribute("codigo"));
-                gerente = buscador.buscarGerente((String)request.getSession().getAttribute("codigo"));//el id que devuelve es el id de la sesión... pero aquí se requiere el de la DB... [quizá el otro sea útil para evitar que abra seasión más de una vez...]
-                gerente.hallarCambiosCliente((Cliente) request.getSession().getAttribute("clienteAntiguo"), datos);
-                request.setAttribute("cambios", gerente.darListaListados());                
+                gerente = buscador.buscarGerente((String)request.getSession().getAttribute("codigo"));//el id que devuelve es el id de la sesión... pero aquí se requiere el de la DB... [quizá el otro sea útil para evitar que abra seasión más de una vez...]                
+                if(gerente!=null){
+                    gerente.hallarCambiosCliente((Cliente) request.getSession().getAttribute("clienteAntiguo"), datos);
+                    request.setAttribute("cambios", gerente.darListaListados());                
+                }                
             }else{                                                                                                                                  
                 request.setAttribute("mostrarError", true);//puesto que cuando no se agregue correctamente un cambio, será agregado uno por uno a la página...                
             }            

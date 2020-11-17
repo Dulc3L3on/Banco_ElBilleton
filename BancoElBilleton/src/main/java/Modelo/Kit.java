@@ -6,6 +6,7 @@
 package Modelo;
 
 
+import Controladores.GestorCargaDPI;
 import java.security.MessageDigest;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -80,7 +81,11 @@ public class Kit {
         return desencriptada;        
     }//SI FUNCIONA!!!! XD jajajaja
     
-   
+    public String darPathDPI(String nombreArchivo){              
+        return "/BancoElBilleton/Trabajadores/Gerente/DPIs_ElBilleton/"+nombreArchivo;
+    }
+    //Observaciones... si le quitas la barra antepone el contexto, en cambio si se la colocas [esto al principio] lo toma como un path absoluto... ooo xD
+    
     
     
 }

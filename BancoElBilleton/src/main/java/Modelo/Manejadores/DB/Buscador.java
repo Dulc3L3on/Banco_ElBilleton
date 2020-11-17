@@ -6,6 +6,7 @@
 package Modelo.Manejadores.DB;
 
 import Modelo.Entidades.Cambio;
+import Modelo.Entidades.Cuenta;
 import Modelo.Entidades.Usuarios.Cajero;
 import Modelo.Entidades.Usuarios.Cliente;
 import Modelo.Entidades.Usuarios.Gerente;
@@ -140,4 +141,56 @@ public class Buscador {
         }
         return 0;    
     } 
+    
+    public int buscarSaldoActual(String numeroCuenta){
+        String buscar ="SELECT monto FROM Cuentas_Propias WHERE numeroCuenta = ?";
+        
+        try(PreparedStatement instrucciones = conexion.prepareStatement(buscar, ResultSet.TYPE_SCROLL_SENSITIVE, 
+                        ResultSet.CONCUR_UPDATABLE)){
+            int numeroDeCuenta = Integer.parseInt(numeroCuenta);
+            
+            instrucciones.setInt(1, numeroDeCuenta);
+            
+            ResultSet resultado = instrucciones.executeQuery();
+            
+            resultado.first();
+            return resultado.getInt(1);//como solo extraje 1 columna entonces por eso puedo hacerlo así, sino, tendría que saber las posiciones en las que se encuentran... es proceso de siempre xD                        
+            
+        } catch (SQLException | NumberFormatException e) {
+            System.out.println("Error al buscar SALDO ACTUAL: "+ e.getMessage());
+        }
+        return -1;    
+    }
+    
+    public Cliente buscarClienteSolicitanteRetiro(String CUI){
+        String buscar = "SELECT * FROM Cliente WHERE DPI = ?";
+        
+        try(PreparedStatement instrucciones = conexion.prepareStatement(buscar, ResultSet.TYPE_SCROLL_SENSITIVE, 
+                        ResultSet.CONCUR_UPDATABLE)){//, Statement.RETURN_GENERATED_KEYS, esto va en creación xD
+            int dpi = Integer.parseInt(CUI);
+            
+            instrucciones.setInt(1, dpi);            
+
+            return transformador.transformarACliente(instrucciones.executeQuery());//no creo que se salte la revisión de la excepción al colocarlo así...
+            
+        }catch(SQLException | NumberFormatException e){
+            System.out.println("Error al buscar al SOLICITANTE de RETIRO: "+ e.getMessage());
+        }
+        return null;
+    }
+    
+    public Cuenta[] buscarCuentas(int codigoCliente){
+        String buscar="SELECT * FROM Cuentas_Propias WHERE codigoDueno = ?";
+        
+        try(PreparedStatement instrucciones = conexion.prepareStatement(buscar, ResultSet.TYPE_SCROLL_SENSITIVE, 
+                ResultSet.CONCUR_UPDATABLE)){
+            instrucciones.setInt(1, codigoCliente);           
+            
+            return transformador.transformarACuentas(instrucciones.executeQuery());
+            
+        }catch (SQLException e) {
+            System.out.println("Error al buscar las cuentas del SOLICITANTE de RETIRO"+ e.getMessage());
+        }
+        return null;        
+    }
 }

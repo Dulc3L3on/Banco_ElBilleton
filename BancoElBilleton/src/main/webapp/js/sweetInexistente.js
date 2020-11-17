@@ -6,7 +6,7 @@
 
 Swal.fire({
   title:'-Sin Registros-',
-  text: 'el dato especificado para la búsqueda, no se encuentra entre los registrados',
+  text: 'El dato a buscar no corresponde a ninguno de los almacenados',
   toast: true,
   backdrop: true,
   position: 'center',

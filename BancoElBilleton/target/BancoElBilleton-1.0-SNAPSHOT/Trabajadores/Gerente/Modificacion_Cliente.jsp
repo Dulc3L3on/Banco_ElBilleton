@@ -47,7 +47,7 @@
                     <%if(request.getParameter("codigoClienteBuscado")!=null){
                         cliente = buscador.buscarCliente(request.getParameter("codigoClienteBuscado"));
                       }
-                    if(cliente!=null){//aunque podría estar dentro del if en el que se busca media vez halla algo para buscar... puesto que si no se busca, cliente == null, y si se busca pero existe fallo, entocnes seguirá siendo nulll, así que PUEDE ESTAR DENTRO, porque no hay una segunda redirección en la que mande el valor del cliente [establecerlo como atrib] y a partir de ello tenga que hacer algo con dicha info...
+                    if(cliente!=null && request.getParameter("codigoClienteBuscado")!=null){//aunque podría estar dentro del if en el que se busca media vez halla algo para buscar... puesto que si no se busca, cliente == null, y si se busca pero existe fallo, entocnes seguirá siendo nulll, así que PUEDE ESTAR DENTRO, porque no hay una segunda redirección en la que mande el valor del cliente [establecerlo como atrib] y a partir de ello tenga que hacer algo con dicha info...
                         request.getSession().setAttribute("clienteAntiguo", cliente);
                         contraseniaDesencripatada = herramienta.desencriptarContrasenia(cliente.darContrasenia());
                         %>                        

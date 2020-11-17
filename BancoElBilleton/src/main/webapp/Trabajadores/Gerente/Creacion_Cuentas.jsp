@@ -43,11 +43,11 @@
                     </form>   
                     <%if(request.getParameter("codigoClienteBuscado")!=null){//<!--es decir que el usuario rquiere de una búsqueda...-->
                         cliente = buscador.buscarCliente(request.getParameter("codigoClienteBuscado"));                        
-                    }%>
-                    <%if(cliente!=null){//pues al inicio será null y si la búsqueda falla también lo será así que...
-                         numeroCuenta = creador.reservarEspacioCuenta(cliente.darCodigo());
-                         
-                        if(numeroCuenta!=0){%>                                                      
+                        if(cliente!=null){//pues al inicio será null y si la búsqueda falla también lo será así que...
+                            numeroCuenta = creador.reservarEspacioCuenta(cliente.darCodigo());
+                        }//debe estar aquí dentro para evitar que cuando regrese a mostrar los msjes realice otra vez la reservación de espeacio porque a pesar de que no se haya ingresado nada en el input para buscar, cliente != null...
+                    }                      
+                    if(numeroCuenta!=0){%>                                                      
                             <form method="POST" action="../../gestorCreacionCuenta">
                                 <table cellpadding="10px">
                                     <tr>
@@ -101,8 +101,7 @@
                                 <!--solo 2 de estos datos son de mi interés para completar la creacion [monto y #cta], por eso se llaman igual xD, los otros se tratan con otro proceso...-->
                                 <input type="submit" id="submit" name="crearCuenta" value="CREAR CUENTA" width="200px"><!--todos los sumbit sin importar de qué entidad sean y qué sea lo que suban tendrán el mismo aspecto...-->                    
                           </form>     
-                       <%}%>
-                  <%}%>                 
+                       <%}%>                                 
                 </div>                
             </center>
          <%if(request.getAttribute("mostrarMsje")!=null){
@@ -110,7 +109,9 @@
                 <script src="js/sweet.js"></script>
              <%}else{%>
                 <script src="js/sweetError.js"></script>
-             <%}%>
-        <%}%>                                       
+             <%}%>        
+        <%}else if(cliente == null && request.getParameter("codigoClienteBuscado")!=null){%><!--Es decir se buscó, pero se falló en la búsqueda...-->    
+              <script src="../../js/sweetInexistente.js"></script>
+      <%}%>        
     </body>
 </html>

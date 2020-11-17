@@ -17,34 +17,43 @@ import java.sql.SQLException;
  * @author phily
  */
 public class Tramitador {
-    private Connection conexion = ManejadorDB.darConexion();               
-    private Conversor conversor = new Conversor();
+    private Connection conexion = ManejadorDB.darConexion();                   
     private Kit herramientas = new Kit();
 
-    public Transaccion depositar(int codigoCajero, String numeroCuenta, String monto){
-        String tramitar = "INSERT INTO Transaccion (codigo, numeroCuentaAfectada, "
-                + "tipoTransaccion, monto, fecha, hora, codigoCajero) VALUES (?,?,?,?,?,?,?)";
+    public boolean depositar(String numeroCuenta, String monto){
+        String tramitar = "UPDATE Cuentas_Propias SET monto = monto + ? WHERE numeroCuenta = ?";
         
         try(PreparedStatement instrucciones = conexion.prepareStatement(tramitar)){
             int numeroDeCuenta = Integer.parseInt(numeroCuenta);                 
-            int montoDeposito = Integer.parseInt(monto);
-            String hora = herramientas.darHoraActual();
+            int montoDeposito = Integer.parseInt(monto);            
             
-            instrucciones.setInt(1, 12345);//codigo de la transaccion [autoIncre...]       
-            instrucciones.setInt(2, numeroDeCuenta);
-            instrucciones.setString(3, "credito");// == deposito [para el otro debes usar debito...]
-            instrucciones.setInt(4, montoDeposito);
-            instrucciones.setString(5, herramientas.darFechaActualString());
-            instrucciones.setString(6, hora);
-            instrucciones.setInt(7, codigoCajero);
+            instrucciones.setInt(1, montoDeposito);//codigo de la transaccion [autoIncre...]       
+            instrucciones.setInt(2, numeroDeCuenta);            
             
             instrucciones.executeUpdate();
-            return conversor.convertirATransaccion(codigoCajero, numeroDeCuenta, "deposito", montoDeposito, herramientas.darFechaActualString(), hora, codigoCajero);
-            
+            return true;            
         } catch (SQLException | NumberFormatException e) {
-            System.out.println("Error al tramitar el deposito: " + e.getMessage());
+            System.out.println("Error al TRAMITAR el DEPOSITO: " + e.getMessage());
         }
-        return null;        
+        return false;        
+    }
+    
+    public boolean retirar(String numeroCuenta, String monto){
+        String tramitar = "UPDATE Cuentas_Propias SET monto = monto - ? WHERE numeroCuenta = ?";
+        
+        try(PreparedStatement instrucciones = conexion.prepareStatement(tramitar)){
+            int numeroDeCuenta = Integer.parseInt(numeroCuenta);                 
+            int montoDebito = Integer.parseInt(monto);            
+            
+            instrucciones.setInt(1, montoDebito);//codigo de la transaccion [autoIncre...]       
+            instrucciones.setInt(2, numeroDeCuenta);            
+            
+            instrucciones.executeUpdate();//puesto que en la interfaz se establece el máximo como la cantidad que tiene, entonces no habrá problemas de actualizar a una cantidad negativa xD
+            return true;            
+        } catch (SQLException | NumberFormatException e) {
+            System.out.println("Error al TRAMITAR el RETIRO: " + e.getMessage());
+        }
+        return false;   
     }
     
 }

@@ -37,7 +37,7 @@
                         for(int numeroListado=1; numeroListado <= listadoCambiosGeneral.darTamanio(); numeroListado++){
                             listado = nodoDeListados.contenido;%>
                         
-                            <table cellspacing="10px" cellpadding="5px" style="width: 700px">
+                            <table cellspacing="10px" style="width: 700px">
                                 <%if(numeroListado == 1){%>                                                                                      
                                 <tr>
                                     <th colspan="4">

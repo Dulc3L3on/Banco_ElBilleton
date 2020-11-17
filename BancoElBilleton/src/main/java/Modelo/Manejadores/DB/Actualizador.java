@@ -82,17 +82,17 @@ public class Actualizador {
                 + "VALUES (?,?,?,?,?,?,?) ON DUPLICATE KEY UPDATE nombre = ?, direccion = ?, password = ?, turno = ?";
         
         try(PreparedStatement instrucciones = conexion.prepareStatement(actualizar)){
-            String encripatada = herramienta.encriptarContrasenia(datos[2]);
+            String encripatada = herramienta.encriptarContrasenia(datos[0]);
             
             instrucciones.setInt(1, gerenteAntiguo.darCodigo());//codigo
-            instrucciones.setString(2, datos[0]);//nombre
+            instrucciones.setString(2, datos[1]);//nombre
             instrucciones.setString(3, gerenteAntiguo.darDPI());//DPI
-            instrucciones.setString(4, datos[1]);//direccion
+            instrucciones.setString(4, datos[2]);//direccion
             instrucciones.setString(5, gerenteAntiguo.darSexo());//sexo
             instrucciones.setString(6, encripatada);//password
             instrucciones.setString(7, datos[3]);//turno
-            instrucciones.setString(8, datos[0]);//nombre
-            instrucciones.setString(9, datos[1]);//direccion
+            instrucciones.setString(8, datos[1]);//nombre
+            instrucciones.setString(9, datos[2]);//direccion
             instrucciones.setString(10, encripatada);//password
             instrucciones.setString(11, datos[3]);//turno
             

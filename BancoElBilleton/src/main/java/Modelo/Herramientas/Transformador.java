@@ -11,6 +11,8 @@ import Modelo.Entidades.Usuarios.Cliente;
 import Modelo.Entidades.Usuarios.Gerente;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -83,5 +85,26 @@ public class Transformador {
             System.out.println("Error al transformar a CLIENTE: "+ ex.getMessage());
         } 
         return null;       
+    }
+    
+    public Cuenta[] transformarACuentas(ResultSet resultado){
+        Cuenta[] cuentas;
+        
+        try{
+            resultado.last();
+            
+            cuentas = new Cuenta[resultado.getRow()];
+            resultado.first();
+            
+            for (int cuentaActual = 0; cuentaActual < cuentas.length; cuentaActual++) {
+                cuentas[cuentaActual] = new Cuenta(resultado.getInt(1), resultado.getInt(2), resultado.getInt(3), resultado.getString(4));
+                
+                resultado.next();
+            }
+            return cuentas;                
+        } catch (SQLException e) {
+            System.out.println("Error al transformar las CUENTAS: "+ e.getMessage());
+        }
+        return null;        
     }
 }

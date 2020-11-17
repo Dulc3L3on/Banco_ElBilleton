@@ -31,7 +31,7 @@ public class Creador {
         
         try(PreparedStatement instrucciones = conexion.prepareStatement(crear)){            
             
-            instrucciones.setInt(1, 11131);//codigo [sera eli]            
+            instrucciones.setInt(1, 771901);//codigo [sera eli]            
             instrucciones.setString(2, datosUsuario[0]);//nombre
             instrucciones.setString(3, datosUsuario[1]);//DPI
             instrucciones.setString(4, datosUsuario[2]);//direccion
@@ -40,7 +40,7 @@ public class Creador {
             instrucciones.setString(7, datosUsuario[4]);//turno
             
             instrucciones.executeUpdate();//Recuerda que debes recueprar el numero de código y la contra la obtendrás del método que se encarga de generarla aleatoriamente...
-            return conversor.convertirACajero(datosUsuario, 11131, contrasenia);//Esta sería la desencriptada...
+            return conversor.convertirACajero(datosUsuario, 771901, contrasenia);//Esta sería la desencriptada...
             
         }catch(SQLException sqlE){
             System.out.println("Error al crear el cajero: "+ sqlE.getMessage());            
@@ -55,7 +55,7 @@ public class Creador {
         String contrasenia = "password";//Aquí el método para generarlas aleatoriamente xD
         
         try(PreparedStatement instrucciones = conexion.prepareStatement(crear)){
-            instrucciones.setInt(1, 333571);
+            instrucciones.setInt(1, 235235);
             instrucciones.setString(2,datosUsuario[0]);
             instrucciones.setString(3,datosUsuario[1]);
             instrucciones.setString(4, path);//este será el nombre del documento, el cual agregarás a la dirección en la que se almacenan todos los DPI, por lo cual podrás obtener el que corresponde, media vez obtengas este nombre... xD, depkano que se tendrá que agarrar luego de haberlo "subido" al servidor... entonces piensa como vas a llamar al servlet subidor...
@@ -65,7 +65,7 @@ public class Creador {
             instrucciones.setString(8, datosUsuario[4]);            
             
             instrucciones.executeUpdate();
-            return conversor.convertirACliente(datosUsuario, 333571, contrasenia, path);
+            return conversor.convertirACliente(datosUsuario, 235235, contrasenia, path);
             
         }catch(SQLException sqlE){
             System.out.println("Error al crear el cliente: "+ sqlE.getMessage());           
@@ -79,7 +79,7 @@ public class Creador {
         
         try(PreparedStatement instrucciones = conexion.prepareStatement(crear)){            
             
-            instrucciones.setInt(1, 331);//codigo [sera eli]            
+            instrucciones.setInt(1, 7778);//codigo [sera eli]            
             instrucciones.setString(2, datosUsuario[0]);//nombre
             instrucciones.setString(3, datosUsuario[1]);//DPI
             instrucciones.setString(4, datosUsuario[2]);//direccion
@@ -88,7 +88,7 @@ public class Creador {
             instrucciones.setString(7, datosUsuario[4]);//turno
             
             instrucciones.executeUpdate();
-            return conversor.convertirAGerente(datosUsuario, 331, contrasenia);
+            return conversor.convertirAGerente(datosUsuario, 7778, contrasenia);
             
         }catch(SQLException sqlE){
             System.out.println("Error al crear el gerente: "+ sqlE.getMessage());
@@ -108,13 +108,13 @@ public class Creador {
         String crearReserva = "INSERT INTO Cuentas_Propias (numeroCuenta, codigoDueno) VALUES(?,?)";
         
         try(PreparedStatement instrucciones = conexion.prepareStatement(crearReserva)){                                                
-            instrucciones.setInt(1, 33551);//esto sera eli, [autoIncre]
+            instrucciones.setInt(1, 778998);//esto sera eli, [autoIncre]
             instrucciones.setInt(2, codigoDueno);
             
             instrucciones.executeUpdate();
             /*ResultSet resultado= instrucciones.getGeneratedKeys();            
             return resultado.getInt(1);//se devuleve el #cuenta...*///hasta que sea autoIncre...
-            return 33551;            
+            return 778998;            
         }catch(SQLException sqlE){
             System.out.println("Error al completar la creacion de la cuenta: "+ sqlE.getMessage());           
         }              

@@ -23,8 +23,10 @@ public class GestorLogout extends HttpServlet{//creo que tendré que hacer 1 por
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.println(request.getSession().getAttribute("codigo"));
         request.getSession().removeAttribute("codigo");        
         request.getSession().invalidate();
+        System.out.println(request.getSession().getAttribute("codigo"));
 
         response.sendRedirect(request.getContextPath() + "/Login_Usuario.jsp");
     }

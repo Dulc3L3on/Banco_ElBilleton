@@ -31,7 +31,7 @@ public class Gerente extends Usuario{
             registrador.registrarCambioCliente(codigo, "nombre", clienteAntiguo.nombre, datosNuevos[0], clienteAntiguo.codigo);
         }
         if(!clienteAntiguo.pathDPI.equals(datosNuevos[1])){
-            registrador.registrarCambioCliente(codigo, "archivo DPI", clienteAntiguo.DPI, datosNuevos[1], clienteAntiguo.codigo);
+            registrador.registrarCambioCliente(codigo, "archivo DPI", clienteAntiguo.pathDPI, datosNuevos[1], clienteAntiguo.codigo);
         }
         if(!clienteAntiguo.direccion.equals(datosNuevos[2])){
             registrador.registrarCambioCliente(codigo, "direccion", clienteAntiguo.direccion, datosNuevos[2], clienteAntiguo.codigo);
@@ -45,16 +45,16 @@ public class Gerente extends Usuario{
         String desencriptada = herramienta.desencriptarContrasenia(cajeroAntiguo.password);
         
       if(!cajeroAntiguo.nombre.equals(datosNuevos[0])){
-            registrador.registrarCambioCliente(codigo, "nombre", cajeroAntiguo.nombre, datosNuevos[0], cajeroAntiguo.codigo);
+            registrador.registrarCambioCajero(codigo, "nombre", cajeroAntiguo.nombre, datosNuevos[0], cajeroAntiguo.codigo);
         }       
         if(!cajeroAntiguo.direccion.equals(datosNuevos[1])){
-            registrador.registrarCambioCliente(codigo, "direccion", cajeroAntiguo.direccion, datosNuevos[1], cajeroAntiguo.codigo);
+            registrador.registrarCambioCajero(codigo, "direccion", cajeroAntiguo.direccion, datosNuevos[1], cajeroAntiguo.codigo);
         }
         if(!desencriptada.equals(datosNuevos[2])){
-            registrador.registrarCambioCliente(codigo, "contraseña", desencriptada, datosNuevos[2], cajeroAntiguo.codigo);
+            registrador.registrarCambioCajero(codigo, "contraseña", desencriptada, datosNuevos[2], cajeroAntiguo.codigo);
         } 
         if(!cajeroAntiguo.turno.equals(datosNuevos[3])){
-            registrador.registrarCambioCliente(codigo, "turno", cajeroAntiguo.turno, datosNuevos[3], cajeroAntiguo.codigo);
+            registrador.registrarCambioCajero(codigo, "turno", cajeroAntiguo.turno, datosNuevos[3], cajeroAntiguo.codigo);
         }
     }
     
@@ -62,16 +62,16 @@ public class Gerente extends Usuario{
         String desencriptada = herramienta.desencriptarContrasenia(password);
         
       if(!nombre.equals(datosNuevos[0])){
-            registrador.registrarCambioCliente(codigo, "nombre", nombre, datosNuevos[0], codigo);
+            registrador.registrarCambioGerente(codigo, "nombre", nombre, datosNuevos[0]);
         }       
         if(!direccion.equals(datosNuevos[2])){
-            registrador.registrarCambioCliente(codigo, "direccion", direccion, datosNuevos[1], codigo);
+            registrador.registrarCambioGerente(codigo, "direccion", direccion, datosNuevos[2]);
         }
-        if(!desencriptada.equals(datosNuevos[3])){
-            registrador.registrarCambioCliente(codigo, "contraseña", desencriptada, datosNuevos[2], codigo);
+        if(!desencriptada.equals(datosNuevos[1])){
+            registrador.registrarCambioGerente(codigo, "contraseña", desencriptada, datosNuevos[1]);
         } 
-        if(!turno.equals(datosNuevos[1])){
-            registrador.registrarCambioCliente(codigo, "turno", turno, datosNuevos[3], codigo);
+        if(!turno.equals(datosNuevos[3])){
+            registrador.registrarCambioGerente(codigo, "turno", turno, datosNuevos[3]);
         }
     }
     

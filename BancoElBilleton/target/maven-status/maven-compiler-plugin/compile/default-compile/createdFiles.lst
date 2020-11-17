@@ -26,7 +26,8 @@ Modelo/Entidades/Cuenta.class
 Controladores/GestorCreacionCajero.class
 Controladores/GestorLogin.class
 Modelo/Entidades/Usuarios/Usuario.class
+Controladores/GestorModificacionGerente.class
 Controladores/GestorCreacionCuenta.class
 Modelo/Entidades/Cambio.class
 Modelo/Kit.class
-Controladores/GestionModificacionCajero.class
+Controladores/GestorRetiro.class

@@ -48,6 +48,7 @@
         }
         if(dueno!=null){%>
             <form method="POST" action="../../gestorDeposito">
+                <input type="text" name="codigoDueno" value="<%=codigoDueno%>" hidden>
                 <table cellspacing="10px" cellpadding="5px">             
                     <tr>
                         <th colspan="2">
@@ -88,10 +89,7 @@
             </form>                  
             <%}else if(dueno == null && request.getParameter("cuentaBuscada")!=null){%>                                    
                 <script src="../../js/sweetInexistente.js"></script><!--el chivo es ver como se colocó el css[para que pudiera visualizarse...] xD Jahajajja, pues a esa profundidad se encuentra la pág... xd-->
-            <%}            
-             if(request.getAttribute("mostrarError")!=null){%>
-                    <script src="js/sweetError.js"></script>    
-             <%}%>       
+            <%}%>                            
             </div>                          
         </center>        
     </body>

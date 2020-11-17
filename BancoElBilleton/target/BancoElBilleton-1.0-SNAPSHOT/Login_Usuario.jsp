@@ -20,7 +20,7 @@
             </div>                 
             <div id="divLogin">      
                 
-                <form method="POST" action="gestorLogin">             
+                <form method="POST" action="gestorLogin"><!--sería  bueno hacer que cuando cierren la página pero no cerraron sesión que cuando vuelva a colocar Login_Usuario lo redireccionara de una vez a us HOme xD puesto que si existía un codigo [id] rgistrado en la sesión...-->             
                   <table cellspacing="25">
                       <th>
                           <img src="img/profile.png" id="img">

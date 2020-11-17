@@ -7,6 +7,8 @@
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Modelo/Entidades/Usuarios/Cliente.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Modelo/Herramientas/Transformador.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Modelo/Entidades/Usuarios/Cajero.java
+/home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestorModificacionGerente.java
+/home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestorRetiro.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestorCreacionCuenta.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Modelo/Herramientas/GuardiaSeguridad.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestorRecargaDPI.java
@@ -20,8 +22,8 @@
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Modelo/Manejadores/Web/ManejadorNavegacion.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestorLogout.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Modelo/Herramientas/Conversor.java
-/home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestionModificacionCajero.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestorModificacionCliente.java
+/home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestorPerfilGerente.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Modelo/Nodo.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Controladores/GestorLogin.java
 /home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/java/Modelo/Kit.java

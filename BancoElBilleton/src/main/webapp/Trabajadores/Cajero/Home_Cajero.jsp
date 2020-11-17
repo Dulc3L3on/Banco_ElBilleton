@@ -25,6 +25,7 @@
                     <input type="submit" class="button" id="opciones" name="opcion" value="RETIRO" >
                     <input type="submit" class="button" id="opciones" name="opcion" value="REPORTES" >
                     <a href="Home_Cajero.jsp"><img src="../../img/IconoPerfil.png" width="50" height="50" id="perfil"></a>
+                    <a href="../../gestorLogout"><img src="../../img/off.png" width="50" height="50" id="off"></a>
                 </center>                   
             </form>                                            
         </div>                

@@ -5,10 +5,8 @@
  */
 package Controladores;
 
+
 /**
  *
  * @author phily
  */
-public class GestionModificacionCajero {
-    
-}

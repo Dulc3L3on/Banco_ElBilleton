@@ -25,7 +25,7 @@ import javax.servlet.http.Part;
     maxFileSize=1024*1024*5, maxRequestSize=1024*1024*5*5)
 public class GestorCargaDPI extends HttpServlet{
     
-    public static final String BASE_PATH = "/home/phily/Descargas/DPIs_ElBilleton";//puedes usarlo xD, solo pregunta cómo ceder permisos para que puedan cargarse archivos relativos a la raíz del proyecto...
+    public static final String BASE_PATH = "/home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/webapp/Trabajadores/Gerente/DPIs_ElBilleton";//entonces lo guardará en la carpeta del gerente...
         
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -55,4 +55,4 @@ public class GestorCargaDPI extends HttpServlet{
         return null;
     }
     
-}
+}// <object data="<%=herramienta.darPathDPI(cliente.darPath())%>"></object> basta con 1 ifram, 1 object o 1 embebed [este último si no lo probé xD, bueno sí pero no apareció nada xD  <!--<embed src="<%=cliente.darPath()%>" type="application/pdf" width="150px" height="150px"></embed>-->

@@ -6,6 +6,8 @@
 package Controladores;
 
 import Modelo.Entidades.Transaccion;
+import Modelo.Manejadores.DB.Buscador;
+import Modelo.Manejadores.DB.Registrador;
 import Modelo.Manejadores.DB.Tramitador;
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -20,23 +22,36 @@ import javax.servlet.http.HttpServletResponse;
  */
 @WebServlet("/gestorDeposito")
 public class GestorDeposito extends HttpServlet{
-    Tramitador tramitador = new Tramitador();
+    Tramitador tramitador = new Tramitador();    
     Transaccion transaccion;   
+    Registrador registrador = new Registrador();
+    Buscador buscador = new Buscador();
     
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response){
-         transaccion = tramitador.depositar( Integer.parseInt((String) request.getSession().getAttribute("codigo")), request.getParameter("numeroCuenta"), request.getParameter("monto"));//no se porque lo habrí anombrado opDeposito xd... le queda mejor monto xD
-                 
-        try {
-            if(transaccion!=null){             
-                request.setAttribute("transaccion", transaccion);
-                request.getRequestDispatcher("Trabajadores/Cajero/Resultado.jsp").forward(request, response);             
-            }else{
-                request.setAttribute("mostrarError", true);
-                request.getRequestDispatcher("Trabajadores/Cajero/Deposito.jsp").forward(request, response);             
-            }            
-        } catch (ServletException | IOException e) {
-            System.out.println("Error al mostrar los resutados del DEPÓSITO: " + e.getMessage());
-        }
+        int saldoActual = -1;//para que si se llega al final de bloque y se obtiene este valor, es un hecho de que más de algo falló xD, lo cual es lo único que le interesa saber al cajero...        
+       
+        if(tramitador.depositar(request.getParameter("numeroCuenta"), request.getParameter("monto"))){//no se porque lo habrí anombrado opDeposito xd... le queda mejor monto xD
+            transaccion = registrador.registrarTrasaccion(Integer.parseInt(request.getSession().getAttribute("codigo").toString()),
+                  request.getParameter("numeroCuenta"), request.getParameter("monto"), "credito");         
+         
+            if(transaccion!=null){     
+                saldoActual = buscador.buscarSaldoActual(request.getParameter("numeroCuenta"));
+                    
+                if(saldoActual!=-1){//pues si puede quedar en 0 el saldo, pero no menos de eso...por ello si es -1, el porceso falló...
+                    request.setAttribute("saldoActual", saldoActual);
+                    request.setAttribute("tipo", "credito");
+                    request.setAttribute("transaccion", transaccion);                
+                }                    
+            }                                     
+        }     
+        try { 
+            if(saldoActual==-1){
+                request.setAttribute("mostrarError", true);     
+            }
+            request.getRequestDispatcher("Trabajadores/Cajero/Resultado_Transaccion.jsp").forward(request, response);             
+         } catch (ServletException | IOException e) {
+                System.out.println("Error al mostrar los resutados del DEPÓSITO: " + e.getMessage());
+         }
     }       
 }

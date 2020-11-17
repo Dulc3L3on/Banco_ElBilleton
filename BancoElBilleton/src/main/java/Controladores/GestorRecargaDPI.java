@@ -22,7 +22,7 @@ import javax.servlet.http.Part;
 @MultipartConfig(location="/tmp", fileSizeThreshold=1024*1024, 
     maxFileSize=1024*1024*5, maxRequestSize=1024*1024*5*5)
 public class GestorRecargaDPI extends HttpServlet{
-    public static final String BASE_PATH = "/home/phily/Descargas/DPIs_ElBilleton";//puedes usarlo xD, solo pregunta cómo ceder permisos para que puedan cargarse archivos relativos a la raíz del proyecto...
+    public static final String BASE_PATH = "/home/phily/Documentos/Carpeta_estudios/CuartoSemestre/IPC2/LabIPC2/Proyectos/ProyectoFinal/Proyecto/Banco_ElBilleton/BancoElBilleton/src/main/webapp/Trabajadores/Gerente/DPIs_ElBilleton";//puedes usarlo xD, solo pregunta cómo ceder permisos para que puedan cargarse archivos relativos a la raíz del proyecto...
         
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,9 +30,9 @@ public class GestorRecargaDPI extends HttpServlet{
         String fileName=null;   
         String[] datosCliente = request.getParameterValues("datosActualizar");
         String nuevosDatosCLiente[] = new String[4];
-        System.out.println(request.getAttribute("pathAntiguo"));
+        System.out.println(request.getParameter("pathAntiguo"));
         
-        if(request.getParameter("archDPI")!=null){//quiere decir que seleccionaron un arch... o eso compribarems xd, es que supongo que solo con saber que tiene un valor basta...
+        if(request.getPart("archDPI")!=null){//quiere decir que seleccionaron un arch... o eso compribarems xd, es que supongo que solo con saber que tiene un valor basta...
             Part filePart = request.getPart("archDPI");//mmmm bueno,es prueba xD
             fileName = getFileName(filePart);        
         
